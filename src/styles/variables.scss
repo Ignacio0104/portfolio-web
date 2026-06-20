@@ -1,0 +1,35 @@
+// ─── Color tokens ───────────────────────────────────────────────
+// Update these variables to retheme the entire site
+
+$accent: #4f8ef7;
+$accent-hover: #3a7ae8;
+
+$bg-primary: #0a0a0f;
+$bg-secondary: #111118;
+$bg-card: #16161f;
+$bg-card-hover: #1c1c27;
+
+$text-primary: #f0f0f5;
+$text-secondary: #8888a0;
+$text-muted: #55556a;
+
+$border: #22222e;
+$border-hover: #33334a;
+
+// ─── Typography ─────────────────────────────────────────────────
+$font-sans:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  sans-serif;
+$font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+// ─── Spacing / radius ───────────────────────────────────────────
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+// ─── Transitions ────────────────────────────────────────────────
+$transition: 0.2s ease;
+
+// ─── Expose as CSS custom properties (consumed by Tailwind too) ──
