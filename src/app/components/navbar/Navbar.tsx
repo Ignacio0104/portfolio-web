@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import LogoIcon from "../pureComponents/LogoIcon";
 
-const links = [
+const leftLinks = [
   { label: "About", href: "#about" },
-  { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
+];
+
+const rightLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -20,69 +24,91 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const linkStyle = {
+    fontSize: "14px",
+    color: "var(--text-secondary)",
+    padding: "0.375rem 0.75rem",
+    borderRadius: "var(--radius-sm)",
+    transition: "all 0.2s",
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-8 border-b transition-all duration-200 ${
-        scrolled
-          ? "bg-[rgba(10,10,15,0.85)] backdrop-blur-md border-[var(--border)]"
-          : "border-transparent"
-      }`}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        paddingLeft: "2rem",
+        paddingRight: "2rem",
+        borderBottom: `1px solid ${scrolled ? "var(--border)" : "transparent"}`,
+        background: scrolled ? "rgba(10,10,15,0.85)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        transition: "all 0.2s ease",
+      }}
     >
-      <nav className="max-w-[1200px] mx-auto h-[68px] flex items-center gap-8">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 flex-shrink-0">
-          <span className="w-8 h-8 bg-[var(--accent)] text-white text-[13px] font-bold tracking-wide rounded-[var(--radius-sm)] flex items-center justify-center">
-            IS
-          </span>
-          <span className="text-[15px] font-medium text-[var(--text-primary)] tracking-tight">
-            Ignacio Smirlian
-          </span>
-        </a>
-
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-1 list-none ml-auto">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-[var(--text-secondary)] px-3 py-1.5 rounded-[var(--radius-sm)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-all duration-200"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <a
-          href="/cv.pdf"
-          download
-          className="hidden md:block flex-shrink-0 text-[13px] font-medium text-white bg-[var(--accent)] px-4 py-[0.45rem] rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] hover:-translate-y-px transition-all duration-200"
-        >
-          Download CV
-        </a>
-
-        {/* Mobile burger */}
-        <button
-          className="md:hidden ml-auto flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className="block w-[22px] h-0.5 bg-[var(--text-primary)] rounded" />
-          <span className="block w-[22px] h-0.5 bg-[var(--text-primary)] rounded" />
-          <span className="block w-[22px] h-0.5 bg-[var(--text-primary)] rounded" />
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden flex flex-col py-4 pb-6 border-t border-[var(--border)] bg-[rgba(10,10,15,0.95)] backdrop-blur-md">
-          {links.map((link) => (
+      {/* Desktop */}
+      <nav
+        className="hide-on-mobile"
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          height: "68px",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          alignItems: "center",
+          gap: "1rem",
+        }}
+      >
+        {/* Left links */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
+          {leftLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[15px] text-[var(--text-secondary)] px-4 py-3 hover:text-[var(--text-primary)] transition-colors duration-200"
-              onClick={() => setMenuOpen(false)}
+              style={linkStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--text-primary)";
+                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--text-secondary)";
+                e.currentTarget.style.background = "transparent";
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Center — Logo */}
+        <a href="#" style={{ display: "flex", justifyContent: "center" }}>
+          <LogoIcon />
+        </a>
+
+        {/* Right links + CV */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            gap: "0.25rem",
+          }}
+        >
+          {rightLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              style={linkStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--text-primary)";
+                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--text-secondary)";
+                e.currentTarget.style.background = "transparent";
+              }}
             >
               {link.label}
             </a>
@@ -90,12 +116,133 @@ export default function Navbar() {
           <a
             href="/cv.pdf"
             download
-            className="mx-4 mt-3 text-center text-sm font-medium text-white bg-[var(--accent)] px-4 py-2.5 rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] transition-colors duration-200"
+            style={{
+              marginLeft: "0.5rem",
+              fontSize: "13px",
+              fontWeight: 500,
+              color: "#fff",
+              background: "var(--accent)",
+              padding: "0.45rem 1rem",
+              borderRadius: "var(--radius-sm)",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "var(--accent-hover)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "var(--accent)")
+            }
+          >
+            Download CV
+          </a>
+        </div>
+      </nav>
+
+      {/* Mobile */}
+      <nav
+        className="show-on-mobile"
+        style={{
+          margin: "0 auto",
+          height: "68px",
+          display: "none",
+          alignItems: "center",
+        }}
+      >
+        <a href="#" style={{ flexShrink: 0 }}>
+          <LogoIcon />
+        </a>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          style={{
+            marginLeft: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: "4px",
+          }}
+        >
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              style={{
+                display: "block",
+                width: "22px",
+                height: "2px",
+                background: "var(--text-primary)",
+                borderRadius: "2px",
+              }}
+            />
+          ))}
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div
+          className="show-on-mobile"
+          style={{
+            flexDirection: "column",
+            paddingTop: "1rem",
+            paddingBottom: "1.5rem",
+            borderTop: "1px solid var(--border)",
+            background: "rgba(10,10,15,0.95)",
+            backdropFilter: "blur(12px)",
+          }}
+        >
+          {[...leftLinks, ...rightLinks].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                fontSize: "15px",
+                color: "var(--text-secondary)",
+                padding: "0.75rem 1rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "var(--text-primary)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "var(--text-secondary)")
+              }
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="/cv.pdf"
+            download
+            style={{
+              margin: "0.75rem 1rem 0",
+              textAlign: "center",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: "#fff",
+              background: "var(--accent)",
+              padding: "0.625rem 1rem",
+              borderRadius: "var(--radius-sm)",
+            }}
           >
             Download CV
           </a>
         </div>
       )}
+
+      <style>{`
+        @media (min-width: 768px) {
+          .hide-on-mobile { display: grid !important; }
+          .show-on-mobile { display: none !important; }
+        }
+        @media (max-width: 767px) {
+          .hide-on-mobile { display: none !important; }
+          .show-on-mobile { display: flex !important; }
+        }
+      `}</style>
     </header>
   );
 }
