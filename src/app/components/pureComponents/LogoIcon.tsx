@@ -103,7 +103,7 @@ export default function LogoIcon() {
     <span
       style={{
         fontFamily: "JetBrains Mono, Fira Code, monospace",
-        fontSize: "15px",
+        fontSize: "clamp(20px, 1.2vw, 14px)",
         fontWeight: 500,
         letterSpacing: "0.04em",
         minWidth: `${NAME.length}ch`,

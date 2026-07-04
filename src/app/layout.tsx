@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./global.scss";
+import "./global.css";
 import Navbar from "./components/navbar/Navbar";
 
 export const metadata: Metadata = {
@@ -15,6 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>
         <Navbar />
         <main>{children}</main>

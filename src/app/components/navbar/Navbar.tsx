@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LogoIcon from "../pureComponents/LogoIcon";
 
 const leftLinks = [
@@ -15,166 +15,62 @@ const rightLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const linkStyle = {
-    fontSize: "14px",
-    color: "var(--text-secondary)",
-    padding: "0.375rem 0.75rem",
-    borderRadius: "var(--radius-sm)",
-    transition: "all 0.2s",
-  };
+  const linkClass =
+    "text-[clamp(12px,1.2vw,14px)] text-[var(--text-secondary)] px-[clamp(0.4rem,0.8vw,0.75rem)] py-1.5 rounded-[var(--radius-sm)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-all duration-200 whitespace-nowrap";
 
   return (
     <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        borderBottom: `1px solid ${scrolled ? "var(--border)" : "transparent"}`,
-        background: scrolled ? "rgba(10,10,15,0.85)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        transition: "all 0.2s ease",
-      }}
+      className={`fixed top-0 left-0 right-0 z-50 px-[clamp(1rem,3vw,2rem)] w-full border-b border-[var(--border)] bg-[rgba(10,10,15,0.85)] backdrop-blur-md `}
     >
       {/* Desktop */}
-      <nav
-        className="hide-on-mobile"
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          height: "68px",
-          display: "grid",
-          gridTemplateColumns: "1fr auto 1fr",
-          alignItems: "center",
-          gap: "1rem",
-        }}
-      >
+      <nav className="max-md:hidden  grid grid-cols-[1fr_auto_1fr] items-center gap-[clamp(0.5rem,2vw,1rem)] w-full  h-[clamp(52px,6vw,68px)]">
         {/* Left links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
+        <div className="flex items-center 0 gap-10">
           {leftLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              style={linkStyle}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--text-primary)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--text-secondary)";
-                e.currentTarget.style.background = "transparent";
-              }}
-            >
+            <a key={link.href} href={link.href} className={linkClass}>
               {link.label}
             </a>
           ))}
         </div>
 
         {/* Center — Logo */}
-        <a href="#" style={{ display: "flex", justifyContent: "center" }}>
+        <a href="#" className="hidden md:flex justify-center">
           <LogoIcon />
         </a>
 
         {/* Right links + CV */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            gap: "0.25rem",
-          }}
-        >
+        <div className="flex items-center justify-end gap-1">
           {rightLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              style={linkStyle}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--text-primary)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--text-secondary)";
-                e.currentTarget.style.background = "transparent";
-              }}
-            >
+            <a key={link.href} href={link.href} className={linkClass}>
               {link.label}
             </a>
           ))}
           <a
             href="/cv.pdf"
             download
-            style={{
-              marginLeft: "0.5rem",
-              fontSize: "13px",
-              fontWeight: 500,
-              color: "#fff",
-              background: "var(--accent)",
-              padding: "0.45rem 1rem",
-              borderRadius: "var(--radius-sm)",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "var(--accent-hover)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "var(--accent)")
-            }
+            className="ml-2 text-[clamp(11px,1.1vw,13px)] font-medium text-white bg-[var(--accent)] px-[clamp(0.5rem,1.2vw,1rem)] py-[0.45rem] rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
           >
             Download CV
           </a>
         </div>
       </nav>
 
-      {/* Mobile */}
-      <nav
-        className="show-on-mobile"
-        style={{
-          margin: "0 auto",
-          height: "68px",
-          display: "none",
-          alignItems: "center",
-        }}
-      >
-        <a href="#" style={{ flexShrink: 0 }}>
+      {/* Mobile nav */}
+      <nav className="hidden items-center h-[68px]">
+        <a href="#" className="flex-shrink-0">
           <LogoIcon />
         </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "5px",
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            padding: "4px",
-          }}
+          className="ml-auto flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
         >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
-              style={{
-                display: "block",
-                width: "22px",
-                height: "2px",
-                background: "var(--text-primary)",
-                borderRadius: "2px",
-              }}
+              className="block w-[22px] h-0.5 bg-[var(--text-primary)] rounded"
             />
           ))}
         </button>
@@ -182,34 +78,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div
-          className="show-on-mobile"
-          style={{
-            flexDirection: "column",
-            paddingTop: "1rem",
-            paddingBottom: "1.5rem",
-            borderTop: "1px solid var(--border)",
-            background: "rgba(10,10,15,0.95)",
-            backdropFilter: "blur(12px)",
-          }}
-        >
+        <div className="md:hidden flex flex-col pt-4 pb-6 border-t border-[var(--border)] bg-[rgba(10,10,15,0.95)] backdrop-blur-md">
           {[...leftLinks, ...rightLinks].map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              style={{
-                fontSize: "15px",
-                color: "var(--text-secondary)",
-                padding: "0.75rem 1rem",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--text-primary)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--text-secondary)")
-              }
+              className="text-[15px] text-[var(--text-secondary)] px-4 py-3 hover:text-[var(--text-primary)] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -217,32 +92,12 @@ export default function Navbar() {
           <a
             href="/cv.pdf"
             download
-            style={{
-              margin: "0.75rem 1rem 0",
-              textAlign: "center",
-              fontSize: "14px",
-              fontWeight: 500,
-              color: "#fff",
-              background: "var(--accent)",
-              padding: "0.625rem 1rem",
-              borderRadius: "var(--radius-sm)",
-            }}
+            className="mx-4 mt-3 text-center text-sm font-medium text-white bg-[var(--accent)] px-4 py-2.5 rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] transition-colors duration-200"
           >
             Download CV
           </a>
         </div>
       )}
-
-      <style>{`
-        @media (min-width: 768px) {
-          .hide-on-mobile { display: grid !important; }
-          .show-on-mobile { display: none !important; }
-        }
-        @media (max-width: 767px) {
-          .hide-on-mobile { display: none !important; }
-          .show-on-mobile { display: flex !important; }
-        }
-      `}</style>
     </header>
   );
 }
