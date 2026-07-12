@@ -48,7 +48,7 @@ export default function Hero() {
 
         {/* Right — portrait */}
         <div className="relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
-          <div className="absolute inset-[-24px] bg-[var(--bg-secondary)] rounded-[var(--radius-lg)] border border-[var(--border)] z-0" />
+          <div className="absolute inset-[-24px]  z-0" />
           <Image
             src="/assets/images/profile-pic.webp"
             alt="Ignacio Smirlian"
