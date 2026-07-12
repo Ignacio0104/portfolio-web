@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./global.css";
 import Navbar from "./components/navbar/Navbar";
+import GridPulse from "./components/pureComponents/GridPulse";
 
 export const metadata: Metadata = {
   title: "Ignacio Smirlian — Full Stack Developer",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>
+        <GridPulse />
         <Navbar />
         <main>{children}</main>
       </body>

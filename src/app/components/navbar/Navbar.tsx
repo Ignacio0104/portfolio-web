@@ -18,16 +18,16 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass =
-    "text-[clamp(12px,1.2vw,14px)] text-[var(--text-secondary)] px-[clamp(0.4rem,0.8vw,0.75rem)] py-1.5 rounded-[var(--radius-sm)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-all duration-200 whitespace-nowrap";
+    "text-[clamp(12px,1.2vw,14px)] lg:text-[clamp(17px,1.3vw,15px)] text-[var(--text-secondary)] px-[clamp(0.4rem,0.8vw,0.75rem)] py-1.5 rounded-[var(--radius-sm)] hover:text-[var(--text-primary)] hover:bg-white/5 transition-all duration-200 whitespace-nowrap";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-[clamp(1rem,3vw,2rem)] w-full border-b border-[var(--border)] bg-[rgba(10,10,15,0.85)] backdrop-blur-md `}
     >
       {/* Desktop */}
-      <nav className="max-md:hidden  grid grid-cols-[1fr_auto_1fr] items-center gap-[clamp(0.5rem,2vw,1rem)] w-full  h-[clamp(52px,6vw,68px)]">
+      <nav className="max-md:hidden grid grid-cols-[1fr_auto_1fr] items-center gap-[clamp(0.5rem,2vw,1rem)] w-full  h-[clamp(52px,6vw,68px)]">
         {/* Left links */}
-        <div className="flex items-center 0 gap-10">
+        <div className="flex items-center gap-10">
           {leftLinks.map((link) => (
             <a key={link.href} href={link.href} className={linkClass}>
               {link.label}
@@ -41,7 +41,7 @@ export default function Navbar() {
         </a>
 
         {/* Right links + CV */}
-        <div className="flex items-center justify-end gap-1">
+        <div className="flex items-center justify-end gap-10">
           {rightLinks.map((link) => (
             <a key={link.href} href={link.href} className={linkClass}>
               {link.label}
@@ -50,7 +50,7 @@ export default function Navbar() {
           <a
             href="/cv.pdf"
             download
-            className="ml-2 text-[clamp(11px,1.1vw,13px)] font-medium text-white bg-[var(--accent)] px-[clamp(0.5rem,1.2vw,1rem)] py-[0.45rem] rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
+            className="ml-2 text-[clamp(11px,1.1vw,13px)] font-medium lg:font-large text-white bg-[var(--accent)] px-[clamp(0.5rem,1.2vw,1rem)] py-[0.45rem] rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
           >
             Download CV
           </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile nav */}
-      <nav className="hidden items-center h-[68px]">
+      <nav className="flex md:hidden items-center h-[55px]">
         <a href="#" className="flex-shrink-0">
           <LogoIcon />
         </a>
