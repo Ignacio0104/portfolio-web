@@ -15,12 +15,21 @@ export default function Hero() {
       <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 items-center gap-16 max-[900px]:gap-12 max-[900px]:text-center">
         {/* Left — text content */}
         <div className="flex flex-col gap-6">
-          <span className="inline-flex items-center gap-8 text-[12px] font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full w-fit max-[900px]:mx-auto before:content-[''] before:w-1.5 before:h-1.5 before:bg-[var(--accent)] before:rounded-full">
+          <span className="inline-flex items-center gap-4 text-[12px] font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full w-fit max-[900px]:mx-auto before:content-[''] before:w-1.5 before:h-1.5 before:bg-[var(--accent)] before:rounded-full">
             Full Stack Developer
           </span>
 
           <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)]">
-            Building <span className="text-[var(--accent)]">robust</span>{" "}
+            Building{" "}
+            <span
+              className="bg-cover bg-center bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "url('/assets/images/background-pattern.jpg')",
+                WebkitTextStroke: "1px var(--accent)",
+              }}
+            >
+              robust
+            </span>{" "}
             frontend and backend solutions.
           </h1>
 

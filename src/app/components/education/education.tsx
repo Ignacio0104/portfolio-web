@@ -9,7 +9,7 @@ const education = {
   period: "2021 - Present",
 };
 
-const certificates = [
+export const certificates = [
   {
     title: "Next JS: The Complete Developer's Guide",
     hours: 15.5,
@@ -29,6 +29,7 @@ const certificates = [
       "NgRx",
       "HTTP",
       "Routing",
+      "Angular",
     ],
     company: "Udemy",
     image: "/assets/images/angular-complete.jpg",
@@ -37,7 +38,7 @@ const certificates = [
     title: ".NET 7 Web API & Entity Framework Jumpstart",
     hours: 22,
     link: "https://www.udemy.com/certificate/UC-39ca2d56-8850-482e-abe3-3b3c09fee0f2/",
-    skills: [".NET(7,6,5)", "Entity Framework", "Mvc", "API", "JWT"],
+    skills: [".NET(7,6,5)", "Entity Framework", "C#", "Mvc", "API", "JWT"],
     company: "Udemy",
     image: "/assets/images/NETAPI7.jpg",
   },
@@ -69,7 +70,7 @@ const certificates = [
     title: "Master React Hooks Development",
     hours: 6,
     link: "https://udemy.com/certificate/UC-39e77c72-b6aa-42ce-b7af-bc843e4a85bd/",
-    skills: ["Hooks", "Redux", "Reducers"],
+    skills: ["Hooks", "Redux", "Reducers", "React"],
     company: "Udemy",
     image: "/assets/images/react-hooks-master.jpg",
   },
@@ -83,6 +84,7 @@ const certificates = [
       "Pre-Fetching",
       "Authentication",
       "Testing",
+      "React",
     ],
     company: "Udemy",
     image: "/assets/images/react-query-certificate.png",
@@ -91,7 +93,15 @@ const certificates = [
     title: "React Testing Library and Jest",
     hours: 7.5,
     link: "https://www.udemy.com/certificate/UC-a029f12b-c221-4ca6-844e-78c647d9b757/",
-    skills: ["Mock", "Query", "Matchers", "Handlers", "SWR", "Testing"],
+    skills: [
+      "Mock",
+      "Query",
+      "Matchers",
+      "Handlers",
+      "SWR",
+      "Testing",
+      "React",
+    ],
     company: "Udemy",
     image: "/assets/images/rtljest.jpg",
   },
@@ -104,6 +114,7 @@ const certificates = [
       "Content projection",
       "Dependency Injection",
       "Lifecycle",
+      "Angular",
     ],
     company: "Udemy",
     image: "/assets/images/angular-course.jpg",
@@ -128,7 +139,13 @@ const certificates = [
     title: "Complete React Hooks Course",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-d42fd5d0-48ff-4a4a-8472-99fa5753ea1a/",
-    skills: ["Components Lifecycle", "React Router", "Redux", "Hooks Testing"],
+    skills: [
+      "Components Lifecycle",
+      "React Router",
+      "Redux",
+      "Hooks Testing",
+      "React",
+    ],
     company: "Udemy",
     image: "/assets/images/react-hooks-certificate.png",
   },
@@ -136,7 +153,7 @@ const certificates = [
     title: "Testing React with Jest and RTL",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-148d4b8a-f75d-4475-9ffd-24cef5848f26/",
-    skills: ["TDD", "Jest-DOM", "Unit testing", "Mock Service Worker"],
+    skills: ["TDD", "Jest-DOM", "Unit testing", "Mock Service Worker", "React"],
     company: "Udemy",
     image: "/assets/images/RTL-certificate.png",
   },
@@ -144,7 +161,7 @@ const certificates = [
     title: "Super Pack JavaScript, Canvas and Videogames JS",
     hours: 25,
     link: "https://www.udemy.com/certificate/UC-fd7fa42d-e67e-4db1-bfcf-947585db7716/",
-    skills: ["Canvas", "Functions", "Loops", "DOM"],
+    skills: ["Canvas", "Functions", "Loops", "DOM", "Javascript"],
     company: "Udemy",
     image: "/assets/images/games-js-certificate.png",
   },
@@ -152,7 +169,7 @@ const certificates = [
     title: "HTML & CSS Intermediate (offline)",
     hours: 17,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/b4f05fd8-348f-46c6-b75f-beac0d37c66a",
-    skills: ["Selectors", "Bootstrap", "Grid", "Labels"],
+    skills: ["Selectors", "Bootstrap", "Grid", "Labels", "HTML", "CSS"],
     company: "OpenBootcamp",
     image: "/assets/images/HTMLCSS-basic-certificate.png",
   },
@@ -160,7 +177,7 @@ const certificates = [
     title: "React JS Advanced (offline)",
     hours: 30,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/7b8ffe0b-f850-405b-a2a9-2ed2ba25f826",
-    skills: ["Custom Hooks", "PWA", "Testing", "TypeScript"],
+    skills: ["Custom Hooks", "PWA", "Testing", "TypeScript", "React"],
     company: "OpenBootcamp",
     image: "/assets/images/react-adv-certificate.png",
   },
@@ -168,7 +185,7 @@ const certificates = [
     title: "React JS Intermediate (offline)",
     hours: 30,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/d99c79cd-25c2-4888-89b0-6fa3de3cc426",
-    skills: ["Hooks", "Events", "Routing", "HTTP Requests", "Async"],
+    skills: ["Hooks", "Events", "Routing", "HTTP Requests", "Async", "React"],
     company: "OpenBootcamp",
     image: "/assets/images/react-int-certificate.png",
   },
@@ -176,7 +193,7 @@ const certificates = [
     title: "JavaScript Basic (offline)",
     hours: 15,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/8ce5a151-111d-4a99-af2f-0619f9109402",
-    skills: ["Variables", "POO", "Loops"],
+    skills: ["Variables", "POO", "Loops", "Javascript"],
     company: "OpenBootcamp",
     image: "/assets/images/javascript-basic.png",
   },
@@ -184,7 +201,13 @@ const certificates = [
     title: "Git Intermediate (offline)",
     hours: 16,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/80007d33-6523-490e-9f1d-ccad53e04bcf",
-    skills: ["Local Repositories", "Merge/Conflicts", "Gitflow", "CI/CD"],
+    skills: [
+      "Local Repositories",
+      "Merge/Conflicts",
+      "Gitflow",
+      "CI/CD",
+      "GIT",
+    ],
     company: "OpenBootcamp",
     image: "/assets/images/git-int-certificate.png",
   },
@@ -255,7 +278,7 @@ export default function Education() {
       id="education"
       className="min-h-screen flex flex-col justify-center py-20 px-8 max-sm:px-5"
     >
-      <div className="max-w-[860px] mx-auto w-full flex flex-col gap-12">
+      <div className="max-w-[860px] mx-auto w-full flex flex-col gap-8">
         {/* Heading */}
         <div>
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
@@ -274,16 +297,13 @@ export default function Education() {
           </p>
           <div className="flex items-center gap-5 p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)]">
             {/* Icon */}
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] flex items-center justify-center">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <path
-                  d="M11 2L2 7l9 5 9-5-9-5zM2 15l9 5 9-5M2 11l9 5 9-5"
-                  stroke="var(--accent)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <div className="relative flex-shrink-0 w-12 h-12 rounded-xl overflow-hidden border border-[rgba(79,142,247,0.2)]">
+              <Image
+                src="/assets/images/utn.png"
+                alt="UTN Logo"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col gap-0.5">
               <span className="text-base font-semibold text-[var(--text-primary)]">

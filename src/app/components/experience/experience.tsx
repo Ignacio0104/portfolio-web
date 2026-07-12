@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 
-const experiences = [
+export const experiences = [
   {
     company: "Globant",
     type: "Full-time · 4 yrs 4 mos",
@@ -21,7 +21,7 @@ const experiences = [
           "Provide comprehensive technical guidance across diverse technology stacks, assisting team members with cross-functional challenges.",
           "Partner with stakeholders to define and architect future-proof solutions, balancing delivery needs with long-term scalability.",
         ],
-        tags: ["AI", "Leadership", "Angular", "React", "Node.js"],
+        tags: ["AI", "Leadership", "Angular", "Node.js"],
       },
       {
         title: "Web UI Developer",
