@@ -1,4 +1,18 @@
 export const translations = {
+  general: {
+    year: { en: "year", es: "año" },
+    years: { en: "years", es: "años" },
+    month: { en: "month", es: "mes" },
+    months: { en: "months", es: "meses" },
+    unitedStates: {
+      en: "United States · Remote",
+      es: "Estados Unidos · Remoto",
+    },
+    buenosAires: {
+      en: "Buenos Aires, Argentina",
+      es: "Buenos Aires, Argentina",
+    },
+  },
   hero: {
     eyebrow: { en: "Full Stack Developer", es: "Desarrollador Full Stack" },
     heading1: { en: "Building", es: "Construyendo" },
@@ -16,6 +30,11 @@ export const translations = {
   },
   navbar: {
     download: { en: "Download CV", es: "Descargar CV" },
+    about: { en: "About", es: "Sobre mí" },
+    experience: { en: "Experience", es: "Experiencia" },
+    education: { en: "Education", es: "Formación" },
+    projects: { en: "Projects", es: "Proyectos" },
+    contact: { en: "Contact", es: "Contacto" },
   },
   about: {
     eyebrow: { en: "About", es: "Sobre mí" },
@@ -32,10 +51,28 @@ export const translations = {
       en: "I pride myself on being a quick learner and a collaborative team player. Throughout my career, I've consistently demonstrated reliability, organization, and creativity — always willing to support my colleagues and go the extra mile to achieve team goals.",
       es: "Me enorgullezco de ser un aprendiz rápido y un jugador de equipo colaborativo. A lo largo de mi carrera, he demostrado constantemente confiabilidad, organización y creatividad — siempre dispuesto a apoyar a mis colegas y hacer el esfuerzo extra para lograr los objetivos del equipo.",
     },
+    experience: {
+      en: "Professional Experience",
+      es: "Experiencia Profesional",
+    },
   },
   experience: {
+    uiLeaderTitle: {
+      en: "Web UI Developer & Technical Lead",
+      es: "Desarrollador Web & Líder Técnico",
+    },
+    uiLeaderPeriod: { en: "Nov 2025 - Present", es: "Nov 2025 - Presente" },
+    uiWebTitle: { en: "Web UI Developer", es: "Desarrollador Web" },
+    uiWebPeriod: { en: "Jan 2023 - Nov 2025", es: "Ene 2023 - Nov 2025" },
+    uiOracleTitle: { en: "Oracle Functional", es: "Analista Funcional Oracle" },
+    uiOraclePeriod: { en: "Apr 2022 - Jan 2023", es: "Abr 2022 - Ene 2023" },
+    fullStackTitle: {
+      en: "Full Stack Developer",
+      es: "Desarrollador Full Stack",
+    },
+    fullStackPeriod: { en: "Feb 2022 - Present", es: "Feb 2022 - Presente" },
     eyebrow: { en: "Experience", es: "Experiencia" },
-    heading: { en: "Where I've worked", es: "Dónde he trabajado" },
+    heading: { en: "Where I've worked", es: "Dónde trabajé" },
     more: {
       en: "More experiences on LinkedIn",
       es: "Más experiencias en LinkedIn",
@@ -64,6 +101,90 @@ export const translations = {
       es: "UTN — Universidad Tecnológica Nacional",
     },
     period: { en: "2021 - Present", es: "2021 - Presente" },
+    noCertificates: {
+      en: "Certificates for this skill in progress",
+      es: "Certificados para esta habilidad en progreso",
+    },
+    titleNextJS: {
+      en: "Next JS: The Complete Developer's Guide",
+      es: "Next JS: La Guía Completa del Desarrollador",
+    },
+    titleAngularComplete: {
+      en: "Angular - The Complete Guide",
+      es: "Angular - La Guía Completa",
+    },
+    titleDotNet7WebApi: {
+      en: ".NET 7 Web API & Entity Framework Jumpstart",
+      es: ".NET 7 Web API y Entity Framework - Inicio Rápido",
+    },
+    titleDotNet5WebApi: {
+      en: ".NET 5 Web API & Entity Framework",
+      es: ".NET 5 Web API y Entity Framework",
+    },
+    titleSEO: {
+      en: "Search Engine Optimization Tutorial",
+      es: "Tutorial de Optimización para Motores de Búsqueda (SEO)",
+    },
+    titleFlutterBeginners: {
+      en: "Flutter - Beginners Course",
+      es: "Flutter - Curso para Principiantes",
+    },
+    titleReactHooksMaster: {
+      en: "Master React Hooks Development",
+      es: "Domina el Desarrollo con React Hooks",
+    },
+    titleReactQuery: {
+      en: "React Query",
+      es: "React Query",
+    },
+    titleRTLJest: {
+      en: "React Testing Library and Jest",
+      es: "React Testing Library y Jest",
+    },
+    titleAngularCoreDeepDive: {
+      en: "Angular Core Deep Dive",
+      es: "Análisis Profundo del Núcleo de Angular",
+    },
+    titleRestApiAspNet: {
+      en: "Rest Api's with ASP.NET & C#",
+      es: "APIs REST con ASP.NET y C#",
+    },
+    titleScrumFundamentals: {
+      en: "Scrum Fundamentals Certified",
+      es: "Fundamentos de Scrum Certificado",
+    },
+    titleReactHooksComplete: {
+      en: "Complete React Hooks Course",
+      es: "Curso Completo de React Hooks",
+    },
+    titleTestingReactJestRTL: {
+      en: "Testing React with Jest and RTL",
+      es: "Testing en React con Jest y RTL",
+    },
+    titleSuperPackJS: {
+      en: "Super Pack JavaScript, Canvas and Videogames JS",
+      es: "Super Pack JavaScript, Canvas y Videojuegos JS",
+    },
+    titleHtmlCssIntermediate: {
+      en: "HTML & CSS Intermediate (offline)",
+      es: "HTML y CSS Intermedio (offline)",
+    },
+    titleReactAdvanced: {
+      en: "React JS Advanced (offline)",
+      es: "React JS Avanzado (offline)",
+    },
+    titleReactIntermediate: {
+      en: "React JS Intermediate (offline)",
+      es: "React JS Intermedio (offline)",
+    },
+    titleJavascriptBasic: {
+      en: "JavaScript Basic (offline)",
+      es: "JavaScript Básico (offline)",
+    },
+    titleGitIntermediate: {
+      en: "Git Intermediate (offline)",
+      es: "Git Intermedio (offline)",
+    },
   },
   projects: {
     eyebrow: { en: "Projects", es: "Proyectos" },

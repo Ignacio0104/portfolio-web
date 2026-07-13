@@ -1,18 +1,23 @@
 "use client";
 
+import { translations } from "@/i18/translations";
+import { useTranslation } from "@/i18/useTranslations";
 import { useState, useRef } from "react";
 
 export const experiences = [
   {
     company: "Globant",
-    type: "Full-time · 4 yrs 4 mos",
+    // Adjust these to the real start date. endDate: null = still employed ("Present")
+    startDate: "2022-03-01",
+    endDate: null,
+    employmentType: "full-time",
     location: "Buenos Aires, Argentina",
     roles: [
       {
-        title: "Web UI Developer & Technical Lead",
+        title: "uiLeaderTitle",
         client: "Disney",
-        period: "Nov 2025 - Present · 9 mos",
-        modality: "Remote",
+        period: "uiLeaderPeriod",
+        modality: "hybrid",
         bullets: [
           "Oversee team operations, prioritizing the development backlog and assigning tickets to ensure project milestones and deadlines are met.",
           "Serve as the primary technical liaison for clients, facilitating high-level discussions on release planning, scope definition, and delivery timelines.",
@@ -24,10 +29,10 @@ export const experiences = [
         tags: ["AI", "Leadership", "Angular", "Node.js"],
       },
       {
-        title: "Web UI Developer",
+        title: "uiWebTitle",
         client: "Disney",
-        period: "Jan 2023 - Nov 2025 · 2 yrs 11 mos",
-        modality: "Hybrid",
+        period: "uiWebPeriod",
+        modality: "hybrid",
         bullets: [
           "Developed and maintained multiple interconnected web pages with complex workflows, ensuring alignment with client requirements.",
           "Implemented and maintained a suite of reusable components within the company's internal library to drive consistency and development speed.",
@@ -37,10 +42,10 @@ export const experiences = [
         tags: ["Angular", "Jasmine", "TypeScript", "RxJS"],
       },
       {
-        title: "Oracle Functional",
+        title: "uiOracleTitle",
         client: "Pernod Ricard",
-        period: "Apr 2022 - Jan 2023 · 10 mos",
-        modality: "Hybrid",
+        period: "uiOraclePeriod",
+        modality: "hybrid",
         bullets: [
           "Analyzed and resolved issues for JD Edwards users through an incident ticket system.",
           "Developed a deep understanding of the client's business processes.",
@@ -52,14 +57,17 @@ export const experiences = [
   },
   {
     company: "Freelance Developer",
-    type: "Self-employed · 4 yrs 6 mos",
-    location: "United States · Remote",
+    // Adjust these to the real start date. endDate: null = still active ("Present")
+    startDate: "2022-01-01",
+    endDate: null,
+    employmentType: "part-time",
+    location: "unitedStates",
     roles: [
       {
-        title: "Full Stack Developer",
+        title: "fullStackTitle",
         client: null,
-        period: "Feb 2022 - Present · 4 yrs 6 mos",
-        modality: "Remote",
+        period: "fullStackPeriod",
+        modality: "remote",
         bullets: [
           "Perform both front-end and back-end development tasks to create dynamic, user-friendly web applications.",
           "Ensure every component of the web application is responsive and accessible across various devices and platforms.",
@@ -70,6 +78,62 @@ export const experiences = [
     ],
   },
 ];
+
+/**
+ * Calculates a human-readable duration ("X yrs Y mos") between a start
+ * date and an end date (defaults to "now" when endDate is null/undefined).
+ */
+function calculateDuration(
+  translateFx: (module: keyof typeof translations, key: string) => string,
+  startDate: string,
+  endDate?: string | null,
+) {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+
+  if (end.getDate() < start.getDate()) {
+    months -= 1;
+  }
+
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  if (years < 0) {
+    years = 0;
+    months = 0;
+  }
+
+  const parts: string[] = [];
+
+  if (years > 0) {
+    parts.push(
+      `${years} ${years === 1 ? translateFx("general", "year") : translateFx("general", "years")}`,
+    );
+  }
+
+  if (months > 0 || years === 0) {
+    parts.push(
+      `${months} ${months === 1 ? translateFx("general", "month") : translateFx("general", "months")}`,
+    );
+  }
+
+  return parts.join(" ");
+}
+
+/**
+ * "full-time" -> "Full-time", "part-time" -> "Part-time"
+ */
+function formatEmploymentType(employmentType: string) {
+  return employmentType
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("-");
+}
 
 function AnimatedPanel({
   isOpen,
@@ -95,6 +159,7 @@ function AnimatedPanel({
 
 export default function Experience() {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const { translate } = useTranslation();
 
   const toggle = (key: string) =>
     setExpanded((prev) => (prev === key ? null : key));
@@ -109,10 +174,10 @@ export default function Experience() {
         <div className="mb-12">
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
-            Experience
+            {translate("experience", "eyebrow")}
           </span>
           <h2 className="text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-            Where I&apos;ve worked
+            {translate("experience", "heading")}
           </h2>
         </div>
 
@@ -129,10 +194,11 @@ export default function Experience() {
                   {exp.company}
                 </span>
                 <span className="text-xs text-[var(--text-secondary)]">
-                  {exp.type}
+                  {formatEmploymentType(exp.employmentType)} ·{" "}
+                  {calculateDuration(translate, exp.startDate, exp.endDate)}
                 </span>
                 <span className="text-xs text-[var(--text-muted)]">
-                  {exp.location}
+                  {translate("general", exp.location)}
                 </span>
               </div>
 
@@ -159,7 +225,7 @@ export default function Experience() {
                       >
                         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                           <span className="text-sm font-semibold text-[var(--text-primary)]">
-                            {role.title}
+                            {translate("experience", role.title)}
                           </span>
                           {role.client && (
                             <>
@@ -175,7 +241,7 @@ export default function Experience() {
                             ·
                           </span>
                           <span className="text-xs text-[var(--text-secondary)]">
-                            {role.period}
+                            {translate("experience", role.period)}
                           </span>
                         </div>
 
