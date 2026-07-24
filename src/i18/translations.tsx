@@ -16,10 +16,10 @@ export const translations = {
   hero: {
     eyebrow: { en: "Full Stack Developer", es: "Desarrollador Full Stack" },
     heading1: { en: "Building", es: "Construyendo" },
-    headingBold: { en: "robust", es: "soluciones" },
+    headingBold: { en: "robust", es: "robustas" },
     heading2: {
       en: "frontend and backend solutions.",
-      es: "frontend y backend robustas.",
+      es: "soluciones en frontend y backend.",
     },
     subheading: {
       en: "Specializing in high-performance architecture, from scalable Node.js microservices to pixel-perfect React interfaces. Crafting technical precision into every line of code.",
@@ -44,8 +44,8 @@ export const translations = {
       es: "Soy un desarrollador web con experiencia, actualmente trabajando en un proyecto de alto perfil en Disney. Mi especialidad es el desarrollo frontend con Angular y React, y también domino tecnologías backend como C# .NET y Node.js, así como el desarrollo móvil con Flutter.",
     },
     quote: {
-      en: "Knowing the languages isn't the point — understanding software architecture is. That, combined with AI, lets me pivot between technologies without missing a beat.",
-      es: "Conocer los lenguajes no es lo importante — entender la arquitectura de software sí lo es. Eso, combinado con IA, me permite cambiar de tecnología sin perder el ritmo.",
+      en: "Deep understanding of software architecture — not language-specific knowledge — is what enables me to move fluidly across technology stacks, especially when paired with AI-assisted development.",
+      es: "Lo que realmente me permite adaptarme con fluidez a distintas tecnologías no es el dominio de un lenguaje específico, sino una comprensión profunda de la arquitectura de software, sobre todo combinada con el desarrollo asistido por IA.",
     },
     bio2: {
       en: "I pride myself on being a quick learner and a collaborative team player. Throughout my career, I've consistently demonstrated reliability, organization, and creativity — always willing to support my colleagues and go the extra mile to achieve team goals.",

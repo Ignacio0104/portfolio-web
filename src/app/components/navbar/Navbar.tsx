@@ -95,7 +95,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/cv.pdf"
+            href="/assets/documents/IgnacioSmirlian-2026.pdf"
             download
             className="ml-2 text-[clamp(11px,1.1vw,13px)] font-medium lg:font-large text-white bg-[var(--accent)] px-[clamp(0.5rem,1.2vw,1rem)] py-[0.45rem] rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] hover:-translate-y-px transition-all duration-200 whitespace-nowrap"
           >
@@ -144,7 +144,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/cv.pdf"
+            href="/assets/documents/IgnacioSmirlian-2026.pdf"
             download
             className="mx-4 mt-3 text-center text-sm font-medium text-white bg-[var(--accent)] px-4 py-2.5 rounded-[var(--radius-sm)] hover:bg-[var(--accent-hover)] transition-colors duration-200"
           >
