@@ -19,12 +19,12 @@ export const experiences = [
         period: "uiLeaderPeriod",
         modality: "hybrid",
         bullets: [
-          "Oversee team operations, prioritizing the development backlog and assigning tickets to ensure project milestones and deadlines are met.",
-          "Serve as the primary technical liaison for clients, facilitating high-level discussions on release planning, scope definition, and delivery timelines.",
-          "Spearhead the integration of AI-driven tools and workflows across development cycles, managing configuration, implementation, and governance.",
-          "Act as the internal subject matter expert, training and coaching team members on leveraging AI to accelerate development.",
-          "Provide comprehensive technical guidance across diverse technology stacks, assisting team members with cross-functional challenges.",
-          "Partner with stakeholders to define and architect future-proof solutions, balancing delivery needs with long-term scalability.",
+          "uiLeaderBullet1",
+          "uiLeaderBullet2",
+          "uiLeaderBullet3",
+          "uiLeaderBullet4",
+          "uiLeaderBullet5",
+          "uiLeaderBullet6",
         ],
         tags: ["AI", "Leadership", "Angular", "Node.js"],
       },
@@ -34,10 +34,10 @@ export const experiences = [
         period: "uiWebPeriod",
         modality: "hybrid",
         bullets: [
-          "Developed and maintained multiple interconnected web pages with complex workflows, ensuring alignment with client requirements.",
-          "Implemented and maintained a suite of reusable components within the company's internal library to drive consistency and development speed.",
-          "Successfully integrated diverse backend resources and APIs to provide seamless data flow across enterprise front-end applications.",
-          "Demonstrated application progress and validated functional requirements through consistent bi-weekly stakeholder meetings.",
+          "uiWebBullet1",
+          "uiWebBullet2",
+          "uiWebBullet3",
+          "uiWebBullet4",
         ],
         tags: ["Angular", "Jasmine", "TypeScript", "RxJS"],
       },
@@ -46,11 +46,7 @@ export const experiences = [
         client: "Pernod Ricard",
         period: "uiOraclePeriod",
         modality: "hybrid",
-        bullets: [
-          "Analyzed and resolved issues for JD Edwards users through an incident ticket system.",
-          "Developed a deep understanding of the client's business processes.",
-          "Conducted monthly analysis and reporting on the flow, status, and backlog of all processed tickets.",
-        ],
+        bullets: ["uiOracleBullet1", "uiOracleBullet2", "uiOracleBullet3"],
         tags: ["JD Edwards", "Oracle"],
       },
     ],
@@ -68,11 +64,7 @@ export const experiences = [
         client: null,
         period: "fullStackPeriod",
         modality: "remote",
-        bullets: [
-          "Perform both front-end and back-end development tasks to create dynamic, user-friendly web applications.",
-          "Ensure every component of the web application is responsive and accessible across various devices and platforms.",
-          "Apply thoughtful design and architecture principles to ensure scalability, performance, and maintainability.",
-        ],
+        bullets: ["fullStackBullet1", "fullStackBullet2", "fullStackBullet3"],
         tags: ["React.js", "C#", "Node.js", "TypeScript"],
       },
     ],
@@ -272,7 +264,7 @@ export default function Experience() {
                       <AnimatedPanel isOpen={isOpen}>
                         <div className="px-5 pb-5 border-t border-[var(--border)]">
                           <p className="text-xs text-[var(--text-muted)] mt-3 mb-4">
-                            {role.modality}
+                            {translate("experience", role.modality)}
                           </p>
 
                           <ul className="flex flex-col gap-2 mb-5">
@@ -282,7 +274,7 @@ export default function Experience() {
                                 className="flex gap-3 text-sm text-[var(--text-secondary)] leading-relaxed"
                               >
                                 <span className="mt-2 w-1 h-1 rounded-full bg-[var(--accent)] flex-shrink-0" />
-                                {b}
+                                {translate("experience", b)}
                               </li>
                             ))}
                           </ul>
@@ -315,7 +307,7 @@ export default function Experience() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-200 group"
           >
-            More information on LinkedIn
+            {translate("experience", "moreInfoLinkedin")}
             <svg
               width="14"
               height="14"

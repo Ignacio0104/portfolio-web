@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslation } from "@/i18/useTranslations";
+import { translations } from "@/i18/translations";
 
 const education = {
   degree: "Technician in Programming",
@@ -213,7 +215,13 @@ export const certificates = [
   },
 ];
 
-function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
+function CertificateRow({
+  cert,
+  translateFx,
+}: {
+  cert: (typeof certificates)[0];
+  translateFx: (module: keyof typeof translations, key: string) => string;
+}) {
   return (
     <a
       href={cert.link}
@@ -234,7 +242,7 @@ function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
       {/* Info */}
       <div className="flex flex-col gap-1 min-w-0">
         <span className="text-sm font-semibold text-[var(--text-primary)] leading-snug group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
-          {cert.title}
+          {translateFx("education", cert.title)}
         </span>
         <span className="text-xs text-[var(--text-muted)]">
           {cert.company} · {cert.hours}h
@@ -261,6 +269,7 @@ function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
 
 export default function Education() {
   const [modalOpen, setModalOpen] = useState(false);
+  const { translate } = useTranslation();
 
   useEffect(() => {
     if (modalOpen) {
@@ -283,17 +292,17 @@ export default function Education() {
         <div>
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
-            Education
+            {translate("education", "eyebrow")}
           </span>
           <h2 className="text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-            Learning path
+            {translate("education", "heading")}
           </h2>
         </div>
 
         {/* University */}
         <div className="flex flex-col gap-4">
           <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-            University
+            {translate("education", "university")}
           </p>
           <div className="flex items-center gap-5 p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)]">
             {/* Icon */}
@@ -307,13 +316,13 @@ export default function Education() {
             </div>
             <div className="flex flex-col gap-0.5">
               <span className="text-base font-semibold text-[var(--text-primary)]">
-                {education.degree}
+                {translate("education", "degree")}
               </span>
               <span className="text-sm text-[var(--accent)]">
                 {education.institution}
               </span>
               <span className="text-xs text-[var(--text-muted)]">
-                {education.period}
+                {translate("education", "period")}
               </span>
             </div>
           </div>
@@ -322,11 +331,15 @@ export default function Education() {
         {/* Certificates */}
         <div className="flex flex-col gap-4">
           <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-            Certificates
+            {translate("education", "certificates")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
             {certificates.slice(0, 3).map((cert) => (
-              <CertificateRow key={cert.title} cert={cert} />
+              <CertificateRow
+                key={cert.title}
+                cert={cert}
+                translateFx={translate}
+              />
             ))}
           </div>
           <button
@@ -369,7 +382,7 @@ export default function Education() {
           >
             <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border)] flex-shrink-0">
               <h3 className="text-base font-semibold text-[var(--text-primary)]">
-                All Certificates
+                {translate("education", "allCerts")}
                 <span className="ml-2 text-sm font-normal text-[var(--text-muted)]">
                   ({certificates.length})
                 </span>
@@ -407,7 +420,7 @@ export default function Education() {
                   </div>
                   <div className="flex flex-col gap-0.5 flex-1 min-w-0">
                     <span className="text-sm font-semibold text-[var(--text-primary)] truncate group-hover:text-[var(--accent)] transition-colors duration-200">
-                      {cert.title}
+                      {translate("education", cert.title)}
                     </span>
                     <span className="text-xs text-[var(--text-muted)]">
                       {cert.company} · {cert.hours}h

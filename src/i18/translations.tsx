@@ -62,15 +62,79 @@ export const translations = {
       es: "Desarrollador Web & Líder Técnico",
     },
     uiLeaderPeriod: { en: "Nov 2025 - Present", es: "Nov 2025 - Presente" },
+    uiLeaderBullet1: {
+      en: "Oversee team operations, prioritizing the development backlog and assigning tickets to ensure project milestones and deadlines are met.",
+      es: "Superviso las operaciones del equipo, priorizando el backlog de desarrollo y asignando tickets para asegurar que se cumplan los hitos y plazos del proyecto.",
+    },
+    uiLeaderBullet2: {
+      en: "Serve as the primary technical liaison for clients, facilitating high-level discussions on release planning, scope definition, and delivery timelines.",
+      es: "Sirvo como el principal enlace técnico para los clientes, facilitando discusiones de alto nivel sobre la planificación de lanzamientos, definición de alcance y tiempos de entrega.",
+    },
+    uiLeaderBullet3: {
+      en: "Spearhead the integration of AI-driven tools and workflows across development cycles, managing configuration, implementation, and governance.",
+      es: "Lidero la integración de herramientas y flujos de trabajo impulsados por IA en los ciclos de desarrollo, gestionando la configuración, implementación y gobernanza.",
+    },
+    uiLeaderBullet4: {
+      en: "Act as the internal subject matter expert, training and coaching team members on leveraging AI to accelerate development.",
+      es: "Actúo como el experto interno en la materia, capacitando y guiando a los miembros del equipo en el uso de IA para acelerar el desarrollo.",
+    },
+    uiLeaderBullet5: {
+      en: "Provide comprehensive technical guidance across diverse technology stacks, assisting team members with cross-functional challenges.",
+      es: "Brindo orientación técnica integral en diversas tecnologías, ayudando a los miembros del equipo con desafíos interfuncionales.",
+    },
+    uiLeaderBullet6: {
+      en: "Partner with stakeholders to define and architect future-proof solutions, balancing delivery needs with long-term scalability.",
+      es: "Colaboro con los stakeholders para definir y diseñar soluciones preparadas para el futuro, equilibrando las necesidades de entrega con la escalabilidad a largo plazo.",
+    },
     uiWebTitle: { en: "Web UI Developer", es: "Desarrollador Web" },
     uiWebPeriod: { en: "Jan 2023 - Nov 2025", es: "Ene 2023 - Nov 2025" },
+    uiWebBullet1: {
+      en: "Developed and maintained multiple interconnected web pages with complex workflows, ensuring alignment with client requirements.",
+      es: "Desarrollé y mantuve múltiples páginas web interconectadas con flujos de trabajo complejos, asegurando la alineación con los requisitos del cliente.",
+    },
+    uiWebBullet2: {
+      en: "Implemented and maintained a suite of reusable components within the company's internal library to drive consistency and development speed.",
+      es: "Implementé y mantuve un conjunto de componentes reutilizables dentro de la biblioteca interna de la empresa para impulsar la consistencia y la velocidad de desarrollo.",
+    },
+    uiWebBullet3: {
+      en: "Successfully integrated diverse backend resources and APIs to provide seamless data flow across enterprise front-end applications.",
+      es: "Integré con éxito diversos recursos de backend y APIs para proporcionar un flujo de datos continuo en las aplicaciones frontend empresariales.",
+    },
+    uiWebBullet4: {
+      en: "Demonstrated application progress and validated functional requirements through consistent bi-weekly stakeholder meetings.",
+      es: "Demostré el progreso de la aplicación y validé los requisitos funcionales a través de reuniones quincenales constantes con los stakeholders.",
+    },
     uiOracleTitle: { en: "Oracle Functional", es: "Analista Funcional Oracle" },
     uiOraclePeriod: { en: "Apr 2022 - Jan 2023", es: "Abr 2022 - Ene 2023" },
+    uiOracleBullet1: {
+      en: "Analyzed and resolved issues for JD Edwards users through an incident ticket system.",
+      es: "Analicé y resolví problemas para usuarios de JD Edwards a través de un sistema de tickets de incidencias.",
+    },
+    uiOracleBullet2: {
+      en: "Developed a deep understanding of the client's business processes.",
+      es: "Desarrollé una profunda comprensión de los procesos de negocio del cliente.",
+    },
+    uiOracleBullet3: {
+      en: "Conducted monthly analysis and reporting on the flow, status, and backlog of all processed tickets.",
+      es: "Realicé análisis mensuales y reportes sobre el flujo, estado y backlog de todos los tickets procesados.",
+    },
     fullStackTitle: {
       en: "Full Stack Developer",
       es: "Desarrollador Full Stack",
     },
     fullStackPeriod: { en: "Feb 2022 - Present", es: "Feb 2022 - Presente" },
+    fullStackBullet1: {
+      en: "Perform both front-end and back-end development tasks to create dynamic, user-friendly web applications.",
+      es: "Realizo tareas de desarrollo tanto frontend como backend para crear aplicaciones web dinámicas y fáciles de usar.",
+    },
+    fullStackBullet2: {
+      en: "Ensure every component of the web application is responsive and accessible across various devices and platforms.",
+      es: "Aseguro que cada componente de la aplicación web sea responsivo y accesible en diversos dispositivos y plataformas.",
+    },
+    fullStackBullet3: {
+      en: "Apply thoughtful design and architecture principles to ensure scalability, performance, and maintainability.",
+      es: "Aplico principios de diseño y arquitectura cuidadosamente pensados para garantizar la escalabilidad, el rendimiento y la mantenibilidad.",
+    },
     eyebrow: { en: "Experience", es: "Experiencia" },
     heading: { en: "Where I've worked", es: "Dónde trabajé" },
     more: {
@@ -86,6 +150,10 @@ export const translations = {
     freelance: {
       en: "Self-employed · 4 yrs 6 mos",
       es: "Independiente · 4 años 6 meses",
+    },
+    moreInfoLinkedin: {
+      en: "More information on LinkedIn",
+      es: "Más información en LinkedIn",
     },
   },
   education: {
@@ -195,6 +263,34 @@ export const translations = {
     frontend: { en: "Frontend", es: "Frontend" },
     fullstack: { en: "Full Stack", es: "Full Stack" },
     wip: { en: "WIP", es: "En progreso" },
+    thulmannFitness: {
+      en: "Dynamic website for a local fitness center designed to attract new members and publish up-to-date gym news, class schedules, and community highlights.",
+      es: "Sitio web dinámico para un gimnasio local diseñado para atraer nuevos miembros y publicar noticias actualizadas del gimnasio, horarios de clases y destacados de la comunidad.",
+    },
+    strangioNutricion: {
+      en: "Portfolio website for Lic. Antonella Strangio, a clinical nutritionist specialized in diabetes and weight management. Features service breakdown, methodology steps, and WhatsApp booking integration.",
+      es: "Sitio web de portfolio para la Lic. Antonella Strangio, nutricionista clínica especializada en diabetes y control de peso. Cuenta con desglose de servicios, pasos de metodología e integración de reservas por WhatsApp.",
+    },
+    expenseTracker: {
+      en: "Helps users organize finances through highly interactive sections, visualizing incomes and expenses effortlessly. Released as a PWA for mobile.",
+      es: "Ayuda a los usuarios a organizar sus finanzas a través de secciones altamente interactivas, visualizando ingresos y gastos sin esfuerzo. Lanzado como PWA para móviles.",
+    },
+    ambienceHub: {
+      en: "Provides an appropriate ambience for long study/work sessions. Connected to Firebase for persistent data, fully mobile responsive.",
+      es: "Proporciona un ambiente adecuado para largas sesiones de estudio/trabajo. Conectado a Firebase para datos persistentes, completamente adaptable a dispositivos móviles.",
+    },
+    rockPaperScissors: {
+      en: "Fully responsive frontend challenge focused on design, animation, and media queries.",
+      es: "Desafío de frontend totalmente responsivo enfocado en diseño, animación y media queries.",
+    },
+    rickAndMorty: {
+      en: "Displays Rick and Morty characters using a public GraphQL API. Implements Ag Grid, React Query, MSW, and RTL.",
+      es: "Muestra personajes de Rick y Morty utilizando una API pública de GraphQL. Implementa Ag Grid, React Query, MSW y RTL.",
+    },
+    tenziesGame: {
+      en: "Emulates the Tenzies dice game. Installable as a mobile PWA, tracks high scores via LocalStorage.",
+      es: "Emula el juego de dados Tenzies. Instalable como PWA móvil, registra los puntajes más altos mediante LocalStorage.",
+    },
   },
   contact: {
     eyebrow: { en: "Contact", es: "Contacto" },
