@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslation } from "@/i18/useTranslations";
+import { translations } from "@/i18/translations";
 
 const education = {
   degree: "Technician in Programming",
@@ -11,7 +13,7 @@ const education = {
 
 export const certificates = [
   {
-    title: "Next JS: The Complete Developer's Guide",
+    title: "titleNextJS",
     hours: 15.5,
     link: "https://www.udemy.com/certificate/UC-5950a566-367e-4aa9-80b6-4d5df78094dc/",
     skills: ["Next JS", "React", "Authentication", "Typescript"],
@@ -19,7 +21,7 @@ export const certificates = [
     image: "/assets/images/NEXT-JS-COURSE.jpg",
   },
   {
-    title: "Angular - The Complete Guide",
+    title: "titleAngularComplete",
     hours: 37,
     link: "https://www.udemy.com/certificate/UC-77dc4770-9277-42aa-b39d-db861461db3f/",
     skills: [
@@ -35,7 +37,7 @@ export const certificates = [
     image: "/assets/images/angular-complete.jpg",
   },
   {
-    title: ".NET 7 Web API & Entity Framework Jumpstart",
+    title: "titleDotNet7WebApi",
     hours: 22,
     link: "https://www.udemy.com/certificate/UC-39ca2d56-8850-482e-abe3-3b3c09fee0f2/",
     skills: [".NET(7,6,5)", "Entity Framework", "C#", "Mvc", "API", "JWT"],
@@ -43,7 +45,7 @@ export const certificates = [
     image: "/assets/images/NETAPI7.jpg",
   },
   {
-    title: ".NET 5 Web API & Entity Framework",
+    title: "titleDotNet5WebApi",
     hours: 3,
     link: "https://www.udemy.com/certificate/UC-d4eebf6b-801e-4481-8f0e-c67d8dae81de/",
     skills: ["C#", ".NET", "Entity Framework", "SQL", "HTTP"],
@@ -51,7 +53,7 @@ export const certificates = [
     image: "/assets/images/NET5API.jpg",
   },
   {
-    title: "Search Engine Optimization Tutorial",
+    title: "titleSEO",
     hours: 37,
     link: "https://www.udemy.com/certificate/UC-3645053c-bd07-4a8a-bfcf-f9625665cc3f/",
     skills: ["SEO", "Google Analytics"],
@@ -59,7 +61,7 @@ export const certificates = [
     image: "/assets/images/Google-SEO.jpg",
   },
   {
-    title: "Flutter - Beginners Course",
+    title: "titleFlutterBeginners",
     hours: 2.5,
     link: "https://www.udemy.com/certificate/UC-f4a2376b-cf78-44e7-8e84-bb082b850947/",
     skills: ["Flutter", "Dart", "Android Studio"],
@@ -67,7 +69,7 @@ export const certificates = [
     image: "/assets/images/Flutter-beginner.jpg",
   },
   {
-    title: "Master React Hooks Development",
+    title: "titleReactHooksMaster",
     hours: 6,
     link: "https://udemy.com/certificate/UC-39e77c72-b6aa-42ce-b7af-bc843e4a85bd/",
     skills: ["Hooks", "Redux", "Reducers", "React"],
@@ -75,7 +77,7 @@ export const certificates = [
     image: "/assets/images/react-hooks-master.jpg",
   },
   {
-    title: "React Query",
+    title: "titleReactQuery",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-0cdd24dd-e10d-487e-b49e-17692076ade0/",
     skills: [
@@ -90,7 +92,7 @@ export const certificates = [
     image: "/assets/images/react-query-certificate.png",
   },
   {
-    title: "React Testing Library and Jest",
+    title: "titleRTLJest",
     hours: 7.5,
     link: "https://www.udemy.com/certificate/UC-a029f12b-c221-4ca6-844e-78c647d9b757/",
     skills: [
@@ -106,7 +108,7 @@ export const certificates = [
     image: "/assets/images/rtljest.jpg",
   },
   {
-    title: "Angular Core Deep Dive",
+    title: "titleAngularCoreDeepDive",
     hours: 9,
     link: "https://www.udemy.com/certificate/UC-b4053e2a-a22a-4391-b9d5-a5ba4135c69f/",
     skills: [
@@ -120,7 +122,7 @@ export const certificates = [
     image: "/assets/images/angular-course.jpg",
   },
   {
-    title: "Rest Api's with ASP.NET & C#",
+    title: "titleRestApiAspNet",
     hours: 4.5,
     link: "https://www.udemy.com/certificate/UC-78832f92-0021-4e57-9600-98bf472f79e1/",
     skills: ["Rest Api's", "C#", "Azure", ".NET"],
@@ -128,7 +130,7 @@ export const certificates = [
     image: "/assets/images/rest-api-couse.jpg",
   },
   {
-    title: "Scrum Fundamentals Certified",
+    title: "titleScrumFundamentals",
     hours: 1,
     link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=909115",
     skills: ["Scrum Methodology"],
@@ -136,7 +138,7 @@ export const certificates = [
     image: "/assets/images/badge-SFC.png",
   },
   {
-    title: "Complete React Hooks Course",
+    title: "titleReactHooksComplete",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-d42fd5d0-48ff-4a4a-8472-99fa5753ea1a/",
     skills: [
@@ -150,7 +152,7 @@ export const certificates = [
     image: "/assets/images/react-hooks-certificate.png",
   },
   {
-    title: "Testing React with Jest and RTL",
+    title: "titleTestingReactJestRTL",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-148d4b8a-f75d-4475-9ffd-24cef5848f26/",
     skills: ["TDD", "Jest-DOM", "Unit testing", "Mock Service Worker", "React"],
@@ -158,7 +160,7 @@ export const certificates = [
     image: "/assets/images/RTL-certificate.png",
   },
   {
-    title: "Super Pack JavaScript, Canvas and Videogames JS",
+    title: "titleSuperPackJS",
     hours: 25,
     link: "https://www.udemy.com/certificate/UC-fd7fa42d-e67e-4db1-bfcf-947585db7716/",
     skills: ["Canvas", "Functions", "Loops", "DOM", "Javascript"],
@@ -166,7 +168,7 @@ export const certificates = [
     image: "/assets/images/games-js-certificate.png",
   },
   {
-    title: "HTML & CSS Intermediate (offline)",
+    title: "titleHtmlCssIntermediate",
     hours: 17,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/b4f05fd8-348f-46c6-b75f-beac0d37c66a",
     skills: ["Selectors", "Bootstrap", "Grid", "Labels", "HTML", "CSS"],
@@ -174,7 +176,7 @@ export const certificates = [
     image: "/assets/images/HTMLCSS-basic-certificate.png",
   },
   {
-    title: "React JS Advanced (offline)",
+    title: "titleReactAdvanced",
     hours: 30,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/7b8ffe0b-f850-405b-a2a9-2ed2ba25f826",
     skills: ["Custom Hooks", "PWA", "Testing", "TypeScript", "React"],
@@ -182,7 +184,7 @@ export const certificates = [
     image: "/assets/images/react-adv-certificate.png",
   },
   {
-    title: "React JS Intermediate (offline)",
+    title: "titleReactIntermediate",
     hours: 30,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/d99c79cd-25c2-4888-89b0-6fa3de3cc426",
     skills: ["Hooks", "Events", "Routing", "HTTP Requests", "Async", "React"],
@@ -190,7 +192,7 @@ export const certificates = [
     image: "/assets/images/react-int-certificate.png",
   },
   {
-    title: "JavaScript Basic (offline)",
+    title: "titleJavascriptBasic",
     hours: 15,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/8ce5a151-111d-4a99-af2f-0619f9109402",
     skills: ["Variables", "POO", "Loops", "Javascript"],
@@ -198,7 +200,7 @@ export const certificates = [
     image: "/assets/images/javascript-basic.png",
   },
   {
-    title: "Git Intermediate (offline)",
+    title: "titleGitIntermediate",
     hours: 16,
     link: "https://community.open-bootcamp.com/user/ignacio_smirlian/certificaciones/80007d33-6523-490e-9f1d-ccad53e04bcf",
     skills: [
@@ -213,7 +215,13 @@ export const certificates = [
   },
 ];
 
-function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
+function CertificateRow({
+  cert,
+  translateFx,
+}: {
+  cert: (typeof certificates)[0];
+  translateFx: (module: keyof typeof translations, key: string) => string;
+}) {
   return (
     <a
       href={cert.link}
@@ -234,7 +242,7 @@ function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
       {/* Info */}
       <div className="flex flex-col gap-1 min-w-0">
         <span className="text-sm font-semibold text-[var(--text-primary)] leading-snug group-hover:text-[var(--accent)] transition-colors duration-200 line-clamp-2">
-          {cert.title}
+          {translateFx("education", cert.title)}
         </span>
         <span className="text-xs text-[var(--text-muted)]">
           {cert.company} · {cert.hours}h
@@ -261,6 +269,7 @@ function CertificateRow({ cert }: { cert: (typeof certificates)[0] }) {
 
 export default function Education() {
   const [modalOpen, setModalOpen] = useState(false);
+  const { translate } = useTranslation();
 
   useEffect(() => {
     if (modalOpen) {
@@ -283,17 +292,17 @@ export default function Education() {
         <div>
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
-            Education
+            {translate("education", "eyebrow")}
           </span>
           <h2 className="text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-            Learning path
+            {translate("education", "heading")}
           </h2>
         </div>
 
         {/* University */}
         <div className="flex flex-col gap-4">
           <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-            University
+            {translate("education", "university")}
           </p>
           <div className="flex items-center gap-5 p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)]">
             {/* Icon */}
@@ -307,13 +316,13 @@ export default function Education() {
             </div>
             <div className="flex flex-col gap-0.5">
               <span className="text-base font-semibold text-[var(--text-primary)]">
-                {education.degree}
+                {translate("education", "degree")}
               </span>
               <span className="text-sm text-[var(--accent)]">
                 {education.institution}
               </span>
               <span className="text-xs text-[var(--text-muted)]">
-                {education.period}
+                {translate("education", "period")}
               </span>
             </div>
           </div>
@@ -322,11 +331,15 @@ export default function Education() {
         {/* Certificates */}
         <div className="flex flex-col gap-4">
           <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-            Certificates
+            {translate("education", "certificates")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
             {certificates.slice(0, 3).map((cert) => (
-              <CertificateRow key={cert.title} cert={cert} />
+              <CertificateRow
+                key={cert.title}
+                cert={cert}
+                translateFx={translate}
+              />
             ))}
           </div>
           <button
@@ -369,7 +382,7 @@ export default function Education() {
           >
             <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border)] flex-shrink-0">
               <h3 className="text-base font-semibold text-[var(--text-primary)]">
-                All Certificates
+                {translate("education", "allCerts")}
                 <span className="ml-2 text-sm font-normal text-[var(--text-muted)]">
                   ({certificates.length})
                 </span>
@@ -407,7 +420,7 @@ export default function Education() {
                   </div>
                   <div className="flex flex-col gap-0.5 flex-1 min-w-0">
                     <span className="text-sm font-semibold text-[var(--text-primary)] truncate group-hover:text-[var(--accent)] transition-colors duration-200">
-                      {cert.title}
+                      {translate("education", cert.title)}
                     </span>
                     <span className="text-xs text-[var(--text-muted)]">
                       {cert.company} · {cert.hours}h

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { certificates } from "../education/education";
 import { experiences } from "../experience/experience";
 import { AnimatedName } from "../pureComponents/AnimatedName";
+import { useTranslation } from "@/i18/useTranslations";
 
 const skills = [
   { label: "Angular", match: ["angular"] },
@@ -30,6 +31,8 @@ export default function About() {
   const [activeSkill, setActiveSkill] = useState<(typeof skills)[0] | null>(
     null,
   );
+
+  const { translate } = useTranslation();
 
   useEffect(() => {
     if (activeSkill) {
@@ -65,32 +68,23 @@ export default function About() {
         {/* Left — intro */}
         <div className="flex flex-col gap-6">
           <span className="text-sm font-semibold tracking-[0.2em] uppercase text-[var(--accent)]">
-            About
+            {translate("about", "eyebrow")}
           </span>
           <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-[1.15] text-[var(--text-primary)]">
-            Hi! My name is <AnimatedName />
+            {translate("about", "greeting")} <AnimatedName />
           </h2>
           <p className="text-lg text-[var(--text-secondary)] leading-[1.8]">
-            I&apos;m an experienced web developer currently working on a
-            high-profile project at Disney. My expertise lies in frontend
-            development with Angular and React, and I&apos;m equally proficient
-            in backend technologies like C# .NET and Node.js, as well as mobile
-            development with Flutter.
+            {translate("about", "bio1")}
           </p>
         </div>
 
         {/* Right */}
         <div className="flex flex-col gap-8">
           <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl italic text-[var(--text-primary)]">
-            Knowing the languages isn&apos;t the point — understanding software
-            architecture is. That, combined with AI, lets me pivot between
-            technologies without missing a beat.
+            {translate("about", "quote")}
           </blockquote>
           <p className="text-base text-[var(--text-secondary)] leading-[1.7]">
-            I pride myself on being a quick learner and a collaborative team
-            player. Throughout my career, I&apos;ve consistently demonstrated
-            reliability, organization, and creativity — always willing to
-            support my colleagues and go the extra mile to achieve team goals.
+            {translate("about", "bio2")}
           </p>
           <div className="flex flex-wrap gap-3">
             {skills.map((skill) => (
@@ -149,7 +143,7 @@ export default function About() {
               {matchedExperiences.length > 0 && (
                 <div className="flex flex-col gap-3">
                   <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-                    Professional Experience
+                    {translate("about", "experience")}
                   </p>
                   {matchedExperiences.map((exp) =>
                     exp.roles.map((role, i) => (
@@ -159,7 +153,7 @@ export default function About() {
                       >
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="text-sm font-semibold text-[var(--text-primary)]">
-                            {role.title}
+                            {translate("experience", role.title)}
                           </span>
                           {role.client && (
                             <>
@@ -175,7 +169,7 @@ export default function About() {
                         <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
                           <span>{exp.company}</span>
                           <span className="text-[var(--text-muted)]">·</span>
-                          <span>{role.period}</span>
+                          <span>{translate("experience", role.period)}</span>
                         </div>
                         <div className="flex flex-wrap gap-1.5 mt-1">
                           {role.tags.map((tag) => (
@@ -201,7 +195,7 @@ export default function About() {
               {matchedCerts.length > 0 && (
                 <div className="flex flex-col gap-3">
                   <p className="text-xs font-medium tracking-widest uppercase text-[var(--text-muted)]">
-                    Certificates
+                    {translate("education", "certificates")}
                   </p>
                   {matchedCerts.map((cert) => (
                     <a
@@ -221,7 +215,7 @@ export default function About() {
                       </div>
                       <div className="flex flex-col gap-0.5 flex-1 min-w-0">
                         <span className="text-sm font-semibold text-[var(--text-primary)] truncate group-hover:text-[var(--accent)] transition-colors">
-                          {cert.title}
+                          {translate("education", cert.title)}
                         </span>
                         <span className="text-xs text-[var(--text-muted)]">
                           {cert.company} · {cert.hours}h
@@ -264,7 +258,7 @@ export default function About() {
               {/* Empty state */}
               {matchedCerts.length === 0 && matchedExperiences.length === 0 && (
                 <p className="text-sm text-[var(--text-muted)] text-center py-8">
-                  No certificates or experience found for this skill yet.
+                  {translate("education", "noCertificates")}
                 </p>
               )}
             </div>

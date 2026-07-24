@@ -2,12 +2,23 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "@/i18/useTranslations";
+import { translations } from "@/i18/translations";
 
 const projects = [
   {
+    title: "Thulmann Fitness Center",
+    description: "thulmannFitness",
+    date: "Jul 2026",
+    technologies: ["Next.js", "TypeScript", "React"],
+    role: "Frontend",
+    link: "https://www.thulmannfitnesscenter.com.ar/",
+    image: "/assets/images/thulmann-website.png",
+    wip: false,
+  },
+  {
     title: "Strangio Nutrición",
-    description:
-      "Portfolio website for Lic. Antonella Strangio, a clinical nutritionist specialized in diabetes and weight management. Features service breakdown, methodology steps, and WhatsApp booking integration.",
+    description: "strangioNutricion",
     date: "Jun 2026",
     technologies: ["Next.js", "TypeScript", "React"],
     role: "Frontend",
@@ -17,8 +28,7 @@ const projects = [
   },
   {
     title: "Expense Tracker",
-    description:
-      "Helps users organize finances through highly interactive sections, visualizing incomes and expenses effortlessly. Released as a PWA for mobile.",
+    description: "expenseTracker",
     date: "Jul 2023",
     technologies: ["React", "JS", "SCSS", "Firebase"],
     role: "Full Stack",
@@ -28,8 +38,7 @@ const projects = [
   },
   {
     title: "AmbienceHUB",
-    description:
-      "Provides an appropriate ambience for long study/work sessions. Connected to Firebase for persistent data, fully mobile responsive.",
+    description: "ambienceHub",
     date: "Dec 2022",
     technologies: ["React", "JS", "HTML", "CSS"],
     role: "Full Stack",
@@ -39,8 +48,7 @@ const projects = [
   },
   {
     title: "Rock Paper Scissors Lizard Spock",
-    description:
-      "Fully responsive frontend challenge focused on design, animation, and media queries.",
+    description: "rockPaperScissors",
     date: "May 2023",
     technologies: ["React", "TS", "HTML", "CSS"],
     role: "Frontend",
@@ -50,8 +58,7 @@ const projects = [
   },
   {
     title: "Rick and Morty GraphQL",
-    description:
-      "Displays Rick and Morty characters using a public GraphQL API. Implements Ag Grid, React Query, MSW, and RTL.",
+    description: "rickAndMorty",
     date: "May 2023",
     technologies: ["React", "TypeScript", "SCSS", "Jest", "RTL", "GraphQL"],
     role: "Full Stack",
@@ -61,8 +68,7 @@ const projects = [
   },
   {
     title: "Tenzies Game",
-    description:
-      "Emulates the Tenzies dice game. Installable as a mobile PWA, tracks high scores via LocalStorage.",
+    description: "tenziesGame",
     date: "Mar 2022",
     technologies: ["React", "JavaScript", "HTML", "CSS"],
     role: "Frontend",
@@ -107,7 +113,13 @@ const projects = [
 
 const PREVIEW_COUNT = 2;
 
-function ProjectCard({ project }: { project: (typeof projects)[0] }) {
+function ProjectCard({
+  project,
+  translateFx,
+}: {
+  project: (typeof projects)[0];
+  translateFx: (module: keyof typeof translations, key: string) => string;
+}) {
   return (
     <a
       href={project.link}
@@ -146,7 +158,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           </span>
           {project.wip && (
             <span className="text-xs font-medium text-amber-400 bg-[rgba(10,10,15,0.85)] border border-amber-400/30 px-2.5 py-1 rounded-full backdrop-blur-sm">
-              WIP
+              {translateFx("projects", "wip")}
             </span>
           )}
         </div>
@@ -163,7 +175,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           {project.title}
         </h3>
         <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
-          {project.description}
+          {translateFx("projects", project.description)}
         </p>
         <div className="flex flex-wrap gap-1.5 mt-1">
           {project.technologies.map((tech) => (
@@ -183,6 +195,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 export default function Portfolio() {
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? projects : projects.slice(0, PREVIEW_COUNT);
+  const { translate } = useTranslation();
 
   return (
     <section id="projects" className="py-24 px-8 max-sm:px-5">
@@ -191,14 +204,14 @@ export default function Portfolio() {
         <div className="mb-16">
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
-            Projects
+            {translate("projects", "eyebrow")}
           </span>
           <div className="flex items-end justify-between flex-wrap gap-4">
             <h2 className="text-4xl font-bold tracking-tight text-[var(--text-primary)]">
-              Things I&apos;ve built
+              {translate("projects", "heading")}
             </h2>
             <span className="text-sm text-[var(--text-muted)]">
-              {projects.length} projects
+              {projects.length + " " + translate("projects", "eyebrow")}
             </span>
           </div>
         </div>
@@ -206,7 +219,11 @@ export default function Portfolio() {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
           {visible.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard
+              key={project.title}
+              project={project}
+              translateFx={translate}
+            />
           ))}
         </div>
 
@@ -217,7 +234,13 @@ export default function Portfolio() {
               onClick={() => setShowAll((p) => !p)}
               className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] border border-[var(--border)] hover:border-[rgba(79,142,247,0.3)] px-6 py-2.5 rounded-xl transition-all duration-200 group"
             >
-              {showAll ? "Show less" : `Show all ${projects.length} projects`}
+              {showAll
+                ? translate("projects", "showLess")
+                : translate("projects", "showAll") +
+                  " " +
+                  projects.length +
+                  " " +
+                  translate("projects", "eyebrow")}
               <svg
                 className={`transition-transform duration-300 ${showAll ? "rotate-180" : ""}`}
                 width="14"
