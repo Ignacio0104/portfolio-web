@@ -23,7 +23,7 @@ export const translations = {
     },
     subheading: {
       en: "Specializing in high-performance architecture, from scalable Node.js microservices to pixel-perfect React interfaces. Crafting technical precision into every line of code.",
-      es: "Especializado en arquitectura de alto rendimiento, desde microservicios escalables con Node.js hasta interfaces React pixel-perfect. Precisión técnica en cada línea de código.",
+      es: "Arquitecto de software especializado en sistemas de alto rendimiento. Desarrollo microservicios escalables en Node.js y creo interfaces en React con fidelidad pixel-perfect. Calidad y precisión técnica en cada solución.",
     },
     cta1: { en: "View Projects", es: "Ver Proyectos" },
     cta2: { en: "Let's Talk", es: "Hablemos" },
@@ -161,7 +161,7 @@ export const translations = {
     heading: { en: "Learning path", es: "Camino de aprendizaje" },
     university: { en: "University", es: "Universidad" },
     certificates: { en: "Certificates", es: "Certificados" },
-    viewAll: { en: "View all", es: "Ver todos" },
+    viewAll: { en: "View all", es: "Ver todos los" },
     allCerts: { en: "All Certificates", es: "Todos los Certificados" },
     degree: { en: "Technician in Programming", es: "Técnico en Programación" },
     institution: {

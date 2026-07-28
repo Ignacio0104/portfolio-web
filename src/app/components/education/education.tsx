@@ -346,7 +346,11 @@ export default function Education() {
             onClick={() => setModalOpen(true)}
             className="mt-1 cursor-pointer flex items-center justify-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] border border-[var(--border)] hover:border-[rgba(79,142,247,0.3)] rounded-xl py-3 transition-all duration-200 group"
           >
-            View all {certificates.length} certificates
+            {translate("education", "viewAll") +
+              " " +
+              certificates.length +
+              " " +
+              translate("education", "certificates")}
             <svg
               className="transition-transform duration-200 group-hover:translate-x-0.5"
               width="14"
