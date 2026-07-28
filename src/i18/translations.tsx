@@ -158,7 +158,7 @@ export const translations = {
   },
   education: {
     eyebrow: { en: "Education", es: "Educación" },
-    heading: { en: "Learning path", es: "Camino de aprendizaje" },
+    heading: { en: "Learning path", es: "Aprendizaje" },
     university: { en: "University", es: "Universidad" },
     certificates: { en: "Certificates", es: "Certificados" },
     viewAll: { en: "View all", es: "Ver todos los" },
