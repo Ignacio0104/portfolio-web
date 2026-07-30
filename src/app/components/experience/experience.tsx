@@ -159,7 +159,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col justify-center py-20 px-8 max-sm:px-5"
+      className="min-h-screen flex flex-col justify-center py-20 px-8 max-sm:px-5 mt-40 md:mt-0"
     >
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Heading */}

@@ -63,30 +63,32 @@ export default function About() {
     : [];
 
   return (
-    <section id="about" className="h-screen flex items-center px-8 max-sm:px-5">
-      <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 gap-16 max-[900px]:gap-10 items-center">
+    <section
+      id="about"
+      className="h-screen flex items-center px-8 max-sm:px-5 pt-40 md:pt-0"
+    >
+      <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 gap-16 max-[900px]:gap-10 items-center max-[900px]:text-center">
         {/* Left — intro */}
         <div className="flex flex-col gap-6">
           <span className="text-sm font-semibold tracking-[0.2em] uppercase text-[var(--accent)]">
             {translate("about", "eyebrow")}
           </span>
-          <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-[1.15] text-[var(--text-primary)]">
+          <h2 className="text-[clamp(1.75rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-[1.15] text-[var(--text-primary)]">
             {translate("about", "greeting")} <AnimatedName />
           </h2>
-          <p className="text-lg text-[var(--text-secondary)] leading-[1.8]">
+          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.8]">
             {translate("about", "bio1")}
           </p>
         </div>
 
-        {/* Right */}
         <div className="flex flex-col gap-8">
-          <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl italic text-[var(--text-primary)]">
+          <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl max-[900px]:text-base italic text-[var(--text-primary)] max-[900px]:text-left">
             {translate("about", "quote")}
           </blockquote>
-          <p className="text-base text-[var(--text-secondary)] leading-[1.7]">
+          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.8]">
             {translate("about", "bio2")}
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 max-[900px]:justify-center">
             {skills.map((skill) => (
               <button
                 key={skill.label}

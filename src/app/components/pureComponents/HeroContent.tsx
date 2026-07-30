@@ -7,7 +7,7 @@ import React from "react";
 export default function HeroContent() {
   const { translate } = useTranslation();
   return (
-    <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 items-center gap-16 max-[900px]:gap-12 max-[900px]:text-center">
+    <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 max-[900px]:pt-24 items-center gap-16 max-[900px]:gap-12 max-[900px]:text-center">
       {/* Left — text content */}
       <div className="flex flex-col gap-6">
         <span className="inline-flex items-center gap-4 text-[12px] font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full w-fit max-[900px]:mx-auto before:content-[''] before:w-1.5 before:h-1.5 before:bg-[var(--accent)] before:rounded-full">
@@ -50,13 +50,21 @@ export default function HeroContent() {
 
       {/* Right — portrait */}
       <div className="relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
-        <div className="absolute inset-[-24px]  z-0" />
+        <div className="inset-[-24px] z-0" />
         <Image
           src="/assets/images/profile-pic.webp"
           alt="Ignacio Smirlian"
           width={420}
           height={520}
-          className="relative z-10 w-full max-w-[420px] h-auto aspect-[4/5] object-cover rounded-[var(--radius-lg)] grayscale-[20%]"
+          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto aspect-[4/5] object-cover rounded-[var(--radius-lg)] grayscale-[20%]"
+          priority
+        />
+        <Image
+          src="/assets/images/profile-pic.webp"
+          alt="Ignacio Smirlian"
+          width={200}
+          height={200}
+          className="block min-[901px]:hidden relative z-10 w-full max-w-[420px] h-auto aspect-[4/5] object-cover rounded-[var(--radius-lg)] grayscale-[20%]"
           priority
         />
       </div>
