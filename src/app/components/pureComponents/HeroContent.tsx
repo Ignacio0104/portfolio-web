@@ -56,7 +56,7 @@ export default function HeroContent() {
           alt="Ignacio Smirlian"
           width={420}
           height={520}
-          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto aspect-[3.5/5] object-cover rounded-[var(--radius-lg)]"
+          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto  rounded-[var(--radius-lg)]"
           priority
         />
         <Image
