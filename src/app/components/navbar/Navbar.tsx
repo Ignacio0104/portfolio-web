@@ -6,14 +6,14 @@ import { useLang } from "@/i18/context";
 import { useTranslation } from "@/i18/useTranslations";
 
 const leftLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
+  { label: "about", href: "#about" },
+  { label: "experience", href: "#experience" },
+  { label: "education", href: "#education" },
 ];
 
 const rightLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "projects", href: "#projects" },
+  { label: "contact", href: "#contact" },
 ];
 
 const flags = {
@@ -120,6 +120,15 @@ export default function Navbar() {
         <a href="#" className="flex-shrink-0">
           <LogoIcon />
         </a>
+        <div className="w-full flex justify-end mr-4">
+          <button
+            onClick={() => setLang(lang === "en" ? "es" : "en")}
+            className="cursor-pointer justify-end inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] border border-[var(--border)] hover:border-[rgba(79,142,247,0.3)] px-2.5 py-1.5 rounded-md transition-all duration-200"
+          >
+            {lang === "en" ? flags.ar : flags.us}
+            {lang === "en" ? "ES" : "EN"}
+          </button>
+        </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
@@ -144,7 +153,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="text-[15px] text-[var(--text-secondary)] px-4 py-3 hover:text-[var(--text-primary)] transition-colors duration-200"
             >
-              {link.label}
+              {translate("navbar", link.label)}
             </a>
           ))}
           <a

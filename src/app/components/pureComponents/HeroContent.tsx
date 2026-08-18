@@ -52,19 +52,19 @@ export default function HeroContent() {
       <div className="relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
         <div className="inset-[-24px] z-0" />
         <Image
-          src="/assets/images/profile-pic.webp"
+          src="/assets/images/profile-pic-cropped.jpg"
           alt="Ignacio Smirlian"
           width={420}
           height={520}
-          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto aspect-[4/5] object-cover rounded-[var(--radius-lg)] grayscale-[20%]"
+          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto aspect-[3.5/5] object-cover rounded-[var(--radius-lg)]"
           priority
         />
         <Image
-          src="/assets/images/profile-pic.webp"
+          src="/assets/images/profile-pic-cropped.jpg"
           alt="Ignacio Smirlian"
           width={200}
           height={200}
-          className="block min-[901px]:hidden relative z-10 w-full max-w-[420px] h-auto aspect-[4/5] object-cover rounded-[var(--radius-lg)] grayscale-[20%]"
+          className="block min-[901px]:hidden relative z-10 w-full max-w-[420px] h-auto aspect-[3.5/5] object-cover rounded-[var(--radius-lg)]"
           priority
         />
       </div>
