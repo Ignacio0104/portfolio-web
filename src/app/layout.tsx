@@ -3,6 +3,7 @@ import "./global.css";
 import Navbar from "./components/navbar/Navbar";
 import GridPulse from "./components/pureComponents/GridPulse";
 import { LanguageProvider } from "@/i18/context";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Ignacio Smirlian — Full Stack Developer",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>
+        <Analytics />
         <LanguageProvider>
           <GridPulse />
           <Navbar />
