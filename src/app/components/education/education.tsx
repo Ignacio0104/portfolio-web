@@ -13,6 +13,20 @@ const education = {
 
 export const certificates = [
   {
+    title: "titleArchitecture",
+    hours: 8,
+    link: "https://www.udemy.com/certificate/UC-424dfea1-d1f0-480b-9c46-ef3b02368de5/",
+    skills: [
+      "Software Architecture",
+      "System Design",
+      "API Design",
+      "Scalability",
+      "Big Data",
+    ],
+    company: "Udemy",
+    image: "/assets/images/architecture-course.png",
+  },
+  {
     title: "titleNextJS",
     hours: 15.5,
     link: "https://www.udemy.com/certificate/UC-5950a566-367e-4aa9-80b6-4d5df78094dc/",

@@ -173,6 +173,10 @@ export const translations = {
       en: "Certificates for this skill in progress",
       es: "Certificados para esta habilidad en progreso",
     },
+    titleArchitecture: {
+      en: "Software Architecture & Design of Modern Large Scale Systems",
+      es: "Arquitectura y diseño de software para sistemas modernos a gran escala.",
+    },
     titleNextJS: {
       en: "Next JS: The Complete Developer's Guide",
       es: "Next JS: La Guía Completa del Desarrollador",
@@ -252,6 +256,22 @@ export const translations = {
     titleGitIntermediate: {
       en: "Git Intermediate (offline)",
       es: "Git Intermedio (offline)",
+    },
+    architectureSkill1: {
+      en: "Software Architecture",
+      es: "Arquitecture de Software",
+    },
+    architectureSkill2: {
+      en: "System Design",
+      es: "Diseño de sistemas",
+    },
+    architectureSkill3: {
+      en: "API Design",
+      es: "Diseño de API",
+    },
+    architectureSkill4: {
+      en: "Scalability",
+      es: "Escalabilidad",
     },
   },
   projects: {

@@ -10,6 +10,7 @@ import { useTranslation } from "@/i18/useTranslations";
 const skills = [
   { label: "Angular", match: ["angular"] },
   { label: "React", match: ["react"] },
+  { label: "Software Architecture", match: ["architecture"] },
   { label: "AI-assisted development", match: ["ai", "artificial"] },
   { label: "Leadership", match: ["leadership"] },
   { label: "RxJS", match: ["rxjs"] },
