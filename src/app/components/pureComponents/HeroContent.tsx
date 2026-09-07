@@ -7,14 +7,14 @@ import React from "react";
 export default function HeroContent() {
   const { translate } = useTranslation();
   return (
-    <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 max-[900px]:pt-[180px] items-center gap-16 max-[900px]:gap-12 max-[900px]:text-center">
+    <div className="max-w-[95%] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 items-center gap-16 max-[900px]:gap-12 max-[900px]:text-center">
       {/* Left — text content */}
       <div className="flex flex-col gap-6">
-        <span className="inline-flex items-center gap-4 text-[12px] font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full w-fit max-[900px]:mx-auto before:content-[''] before:w-1.5 before:h-1.5 before:bg-[var(--accent)] before:rounded-full">
+        <span className="inline-flex items-center gap-2 text-[10px] lg:text-[12px] font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full w-fit max-[900px]:mx-auto before:content-[''] before:w-1.5 before:h-1.5 before:bg-[var(--accent)] before:rounded-full">
           {translate("hero", "eyebrow")}
         </span>
 
-        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)]">
+        <h1 className="text-[clamp(1.7rem,5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)]">
           {translate("hero", "heading1")}{" "}
           <span
             className="bg-cover bg-center bg-clip-text text-transparent"
@@ -28,7 +28,19 @@ export default function HeroContent() {
           {translate("hero", "heading2")}
         </h1>
 
-        <p className="text-base text-[var(--text-secondary)] leading-[1.7] max-w-[480px] max-[900px]:max-w-full">
+        {/* Right — portrait */}
+        <div className="block min-[901px]:hidden relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
+          <Image
+            src="/assets/images/profile-pic-cropped-mobile.jpg"
+            alt="Ignacio Smirlian"
+            width={150}
+            height={150}
+            className="relative z-10 w-full max-w-[420px] h-auto aspect-[3.5/5] object-cover rounded-[var(--radius-lg)]"
+            priority
+          />
+        </div>
+
+        <p className="text-base text-[var(--text-secondary)] leading-[1.4] max-w-[480px] max-[900px]:max-w-full">
           {translate("hero", "subheading")}
         </p>
 
@@ -49,22 +61,13 @@ export default function HeroContent() {
       </div>
 
       {/* Right — portrait */}
-      <div className="relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
-        <div className="inset-[-24px] z-0" />
+      <div className="hidden min-[901px]:block  relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
         <Image
           src="/assets/images/profile-pic-cropped.jpg"
           alt="Ignacio Smirlian"
-          width={420}
-          height={520}
-          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] h-auto  rounded-[var(--radius-lg)]"
-          priority
-        />
-        <Image
-          src="/assets/images/profile-pic-cropped.jpg"
-          alt="Ignacio Smirlian"
-          width={200}
-          height={200}
-          className="block min-[901px]:hidden relative z-10 w-full max-w-[420px] h-auto aspect-[3.5/5] object-cover rounded-[var(--radius-lg)]"
+          width={400}
+          height={400}
+          className="hidden min-[901px]:block relative z-10 w-full max-w-[420px] rounded-[var(--radius-lg)]"
           priority
         />
       </div>

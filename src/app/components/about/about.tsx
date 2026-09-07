@@ -66,7 +66,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="h-screen flex items-center px-8 max-sm:px-5 pt-40 md:pt-0"
+      className="h-auto lg:h-screen pt-[65px] lg:mt-20 lg:pt-30 flex items-center px-8 max-sm:px-5"
     >
       <div className="max-w-[1200px] mx-auto w-full grid grid-cols-2 max-[900px]:grid-cols-1 gap-16 max-[900px]:gap-10 items-center max-[900px]:text-center">
         {/* Left — intro */}
@@ -77,7 +77,7 @@ export default function About() {
           <h2 className="text-[clamp(1.75rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-[1.15] text-[var(--text-primary)]">
             {translate("about", "greeting")} <AnimatedName />
           </h2>
-          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.8]">
+          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.5]">
             {translate("about", "bio1")}
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function About() {
           <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl max-[900px]:text-base italic text-[var(--text-primary)] max-[900px]:text-left">
             {translate("about", "quote")}
           </blockquote>
-          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.8]">
+          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.5]">
             {translate("about", "bio2")}
           </p>
           <div className="flex flex-wrap gap-3 max-[900px]:justify-center">
