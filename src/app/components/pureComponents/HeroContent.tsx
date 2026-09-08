@@ -61,7 +61,7 @@ export default function HeroContent() {
       </div>
 
       {/* Right — portrait */}
-      <div className="hidden min-[901px]:block  relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
+      <div className="hidden min-[901px]:flex  relative flex justify-center items-center max-[900px]:max-w-[360px] max-[900px]:mx-auto">
         <Image
           src="/assets/images/profile-pic-cropped.jpg"
           alt="Ignacio Smirlian"
