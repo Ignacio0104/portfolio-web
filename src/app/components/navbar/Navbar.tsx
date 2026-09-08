@@ -167,7 +167,7 @@ export default function Navbar() {
           <a
             href={
               lang === "en"
-                ? "/assets/documents/IgnacioSmirlian-2026.pdf"
+                ? "/assets/documents/IgnacioSmirlian-2026-eng.pdf"
                 : "/assets/documents/IgnacioSmirlian-2026-esp.pdf"
             }
             download
