@@ -83,7 +83,11 @@ export default function Navbar() {
         </div>
 
         {/* Center — Logo */}
-        <a href="#" className="hidden md:flex justify-center">
+        <a
+          href="#"
+          className="hidden md:flex justify-center"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <LogoIcon />
         </a>
 
@@ -117,7 +121,11 @@ export default function Navbar() {
 
       {/* Mobile nav */}
       <nav className="flex md:hidden items-center h-[55px]">
-        <a href="#" className="flex-shrink-0">
+        <a
+          href="#"
+          className="flex-shrink-0"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <LogoIcon />
         </a>
         <div className="w-full flex justify-end mr-4">

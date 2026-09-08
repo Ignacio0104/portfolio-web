@@ -159,11 +159,11 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen flex flex-col justify-center py-20 px-8 max-sm:px-5 mt-40 md:mt-0"
+      className="h-auto lg:h-screen flex flex-col justify-center py-6 px-8 max-sm:px-5 pt-[65px] lg:pt-20"
     >
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-6 lg:mb-12">
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
             {translate("experience", "eyebrow")}
