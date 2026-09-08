@@ -77,16 +77,16 @@ export default function About() {
           <h2 className="text-[clamp(1.75rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-[1.15] text-[var(--text-primary)]">
             {translate("about", "greeting")} <AnimatedName />
           </h2>
-          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.5]">
+          <p className="text-lg max-[900px]:text-sm text-[var(--text-secondary)] leading-[1.5]">
             {translate("about", "bio1")}
           </p>
         </div>
 
         <div className="flex flex-col gap-8">
-          <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl max-[900px]:text-base italic text-[var(--text-primary)] max-[900px]:text-left">
+          <blockquote className="border-l-2 border-[var(--accent)] pl-6 py-1 text-xl max-[900px]:text-sm italic text-[var(--text-primary)] max-[900px]:text-left">
             {translate("about", "quote")}
           </blockquote>
-          <p className="text-lg max-[900px]:text-base text-[var(--text-secondary)] leading-[1.5]">
+          <p className="text-lg max-[900px]:text-sm text-[var(--text-secondary)] leading-[1.5]">
             {translate("about", "bio2")}
           </p>
           <div className="flex flex-wrap gap-3 max-[900px]:justify-center">

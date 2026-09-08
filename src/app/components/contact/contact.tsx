@@ -128,7 +128,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-8 max-sm:px-5">
       <div className="max-w-[1200px] mx-auto">
         {/* Heading */}
-        <div className="mb-16">
+        <div className="mb-6 lg:mb-16">
           <span className="inline-flex items-center gap-2 text-xs font-medium tracking-[0.12em] uppercase text-[var(--accent)] bg-[rgba(79,142,247,0.1)] border border-[rgba(79,142,247,0.2)] px-3 py-1.5 rounded-full mb-4">
             <span className="w-1.5 h-1.5 bg-[var(--accent)] rounded-full" />
             {translate("contact", "eyebrow")}
@@ -138,7 +138,7 @@ export default function Contact() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20 items-start">
+        <div className="grid md:grid-cols-[1fr_1.4fr] gap-6 md:gap-20 items-start">
           {/* Left — info */}
           <div className="flex flex-col gap-8">
             <p className="text-[var(--text-secondary)] leading-relaxed text-sm">
