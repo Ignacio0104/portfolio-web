@@ -173,6 +173,10 @@ export const translations = {
       en: "Certificates for this skill in progress",
       es: "Certificados para esta habilidad en progreso",
     },
+    titleAWSBeginners: {
+      en: "Introduction to Cloud Computing on AWS for Beginners",
+      es: "Introducción a Cloud Computing en AWS para principiantes",
+    },
     titleArchitecture: {
       en: "Software Architecture & Design of Modern Large Scale Systems",
       es: "Arquitectura y diseño de software para sistemas modernos a gran escala.",

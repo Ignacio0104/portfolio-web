@@ -13,6 +13,22 @@ const education = {
 
 export const certificates = [
   {
+    title: "titleAWSBeginners",
+    hours: 10,
+    link: "https://www.udemy.com/certificate/UC-2a397852-7ff5-41c5-ad70-72fbd708813d/",
+    skills: [
+      "AWS",
+      "Cloud Computing",
+      "EC2 & VPC",
+      "S3 & Storage",
+      "RDS & DynamoDB",
+      "DevOps & CI/CD",
+      "Serverless & Lambda",
+    ],
+    company: "Udemy",
+    image: "/assets/images/aws-course.jpg",
+  },
+  {
     title: "titleArchitecture",
     hours: 8,
     link: "https://www.udemy.com/certificate/UC-424dfea1-d1f0-480b-9c46-ef3b02368de5/",
